@@ -55,6 +55,11 @@
             <p>
               Efficient low-floor buses ideal for high-frequency urban routes.
             </p>
+            <ul>
+              <li>Up to 45 seats</li>
+              <li>Wheelchair access</li>
+              <li>USB charging ports</li>
+            </ul>
           </article>
           <article class="card">
             <img
@@ -63,14 +68,20 @@
             />
             <h3>MetroDouble Double Deck</h3>
             <p>High-capacity services for busy town centre corridors.</p>
+            <ul>
+              <li>Up to 78 seats</li>
+              <li>Live next-stop displays</li>
+              <li>Extra luggage room</li>
+            </ul>
           </article>
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1597764699513-2e6e1175f0aa?auto=format&fit=crop&w=1200&q=80"
-              alt="Electric shuttle bus"
-            />
             <h3>EcoShuttle Electric</h3>
             <p>Quiet, zero-emission shuttles for local neighbourhood links.</p>
+            <ul>
+              <li>Up to 32 seats</li>
+              <li>Low-noise ride</li>
+              <li>Climate-controlled cabin</li>
+            </ul>
           </article>
         </div>
       </section>
@@ -78,10 +89,25 @@
       <section id="routes" class="section routes">
         <div class="routes__header">
           <h2>Route list</h2>
-          <p>Core antimony services across Croydon.</p>
+          <p>
+            Our popular services in and around Croydon. Use “Open in Google
+            Maps” to view each route directly.
+          </p>
         </div>
 
-        <ul id="route-grid" class="route-grid" aria-live="polite"></ul>
+        <div class="routes__layout">
+          <div>
+            <ul id="route-list" class="route-list" aria-live="polite"></ul>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              title="Croydon area map"
+              src="https://www.google.com/maps?q=Croydon%20UK&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
       </section>
     </main>
 
