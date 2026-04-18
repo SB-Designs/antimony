@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Bus background illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d2025" />
+      <stop offset="100%" stop-color="#3b414a" />
+    </linearGradient>
+    <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.12" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <g opacity="0.28" fill="#c0c0c0">
+    <circle cx="180" cy="180" r="160" />
+    <circle cx="1450" cy="120" r="220" />
+    <circle cx="1380" cy="760" r="190" />
+  </g>
+  <g transform="translate(250 290)">
+    <rect x="0" y="120" width="1100" height="250" rx="34" fill="#c0c0c0" opacity="0.93" />
+    <rect x="90" y="165" width="640" height="90" rx="14" fill="#24272c" opacity="0.82" />
+    <rect x="760" y="165" width="220" height="90" rx="14" fill="#24272c" opacity="0.82" />
+    <rect x="100" y="275" width="200" height="35" rx="8" fill="#24272c" opacity="0.75" />
+    <rect x="330" y="275" width="220" height="35" rx="8" fill="#24272c" opacity="0.75" />
+    <circle cx="245" cy="405" r="58" fill="#181a1e" />
+    <circle cx="870" cy="405" r="58" fill="#181a1e" />
+    <circle cx="245" cy="405" r="27" fill="#656c77" />
+    <circle cx="870" cy="405" r="27" fill="#656c77" />
+  </g>
+  <rect width="1600" height="900" filter="url(#grain)" />
+</svg>
