@@ -18,37 +18,58 @@ const routes = [
     code: 'N2',
     name: 'Night Service: Croydon ↔ Thornton Heath ↔ Crystal Palace',
     stops: ['Croydon Clocktower', 'Thornton Heath', 'Anerley Hill', 'Crystal Palace Parade']
+  },
+  {
+    code: 'D3',
+    name: 'Sanderstead ↔ Lloyd Park ↔ East Croydon',
+    stops: ['Sanderstead Village', 'Purley Oaks', 'Lloyd Park', 'East Croydon Station']
+  },
+  {
+    code: 'E8',
+    name: 'Waddon ↔ Centrale ↔ Selhurst',
+    stops: ['Waddon Marsh', 'Centrale Shopping Centre', 'West Croydon', 'Selhurst Station']
   }
 ];
 
-const routeList = document.getElementById('route-list');
+const routeGrid = document.getElementById('route-grid');
+const routeModal = document.getElementById('route-modal');
+const routeModalTitle = document.getElementById('route-modal-title');
+const routeModalStops = document.getElementById('route-modal-stops');
 
-function toGoogleMapsLink(stops) {
-  const [origin, ...middleAndDest] = stops;
-  const destination = middleAndDest[middleAndDest.length - 1];
-  const waypoints = middleAndDest.slice(0, -1).join('|');
-
-  const params = new URLSearchParams({
-    api: '1',
-    travelmode: 'driving',
-    origin: `${origin}, Croydon, UK`,
-    destination: `${destination}, Croydon, UK`,
-    waypoints: waypoints ? `${waypoints}, Croydon, UK` : ''
-  });
-
-  return `https://www.google.com/maps/dir/?${params.toString()}`;
+function openRouteModal(route) {
+  routeModalTitle.textContent = `${route.code} — ${route.name}`;
+  routeModalStops.innerHTML = route.stops.map((stop) => `<li>${stop}</li>`).join('');
+  routeModal.showModal();
 }
 
 routes.forEach((route) => {
-  const item = document.createElement('li');
-  item.className = 'route-item';
-  item.innerHTML = `
-    <strong>${route.code} — ${route.name}</strong>
-    <span>Stops: ${route.stops.join(' → ')}</span><br>
-    <a href="${toGoogleMapsLink(route.stops)}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+  const card = document.createElement('button');
+  card.type = 'button';
+  card.className = 'route-card';
+  card.innerHTML = `
+    <strong>${route.code}</strong>
+    <span>${route.name}</span>
   `;
 
-  routeList.appendChild(item);
+  card.addEventListener('click', () => openRouteModal(route));
+  routeGrid.appendChild(card);
+});
+
+document.getElementById('close-route-modal').addEventListener('click', () => {
+  routeModal.close();
+});
+
+routeModal.addEventListener('click', (event) => {
+  const dimensions = routeModal.getBoundingClientRect();
+  const isInDialog =
+    dimensions.top <= event.clientY &&
+    event.clientY <= dimensions.top + dimensions.height &&
+    dimensions.left <= event.clientX &&
+    event.clientX <= dimensions.left + dimensions.width;
+
+  if (!isInDialog) {
+    routeModal.close();
+  }
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
