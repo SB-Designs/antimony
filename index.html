@@ -75,10 +75,6 @@
             </ul>
           </article>
           <article class="card">
-            <img
-              src="https://images.unsplash.com/photo-1597764699513-2e6e1175f0aa?auto=format&fit=crop&w=1200&q=80"
-              alt="Electric shuttle bus"
-            />
             <h3>EcoShuttle Electric</h3>
             <p>Quiet, zero-emission shuttles for local neighbourhood links.</p>
             <ul>
@@ -94,22 +90,26 @@
         <div class="routes__header">
           <h2>Route list</h2>
           <p>
-            Tap/click a route card to open a popup with the full stop-by-stop
-            list.
+            Our popular services in and around Croydon. Use “Open in Google
+            Maps” to view each route directly.
           </p>
         </div>
 
-        <div id="route-grid" class="route-grid" aria-live="polite"></div>
+        <div class="routes__layout">
+          <div>
+            <ul id="route-list" class="route-list" aria-live="polite"></ul>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              title="Croydon area map"
+              src="https://www.google.com/maps?q=Croydon%20UK&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
       </section>
     </main>
-
-    <dialog id="route-modal" class="route-modal">
-      <div class="route-modal__content">
-        <h3 id="route-modal-title"></h3>
-        <ol id="route-modal-stops"></ol>
-        <button id="close-route-modal" type="button">Close</button>
-      </div>
-    </dialog>
 
     <footer>
       <p>© <span id="year"></span> antimony. Moving Croydon forward.</p>
