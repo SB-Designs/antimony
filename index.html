@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>antimony | Reliable Croydon Bus Services</title>
+    <meta
+      name="description"
+      content="antimony provides comfortable and dependable bus services across Croydon and surrounding areas."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <nav class="top-nav">
+        <a class="brand" href="#home">antimony</a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#fleet">Fleet</a></li>
+          <li><a href="#routes">Routes</a></li>
+        </ul>
+      </nav>
+      <div class="hero__content">
+        <p class="kicker">Croydon Bus Company</p>
+        <h1>Comfort-first transport for everyday journeys.</h1>
+        <p>
+          At <strong>antimony</strong>, we connect communities with modern buses,
+          friendly drivers, and dependable service.
+        </p>
+        <a href="#routes" class="cta">See today’s routes</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <h2>About us</h2>
+        <p>
+          antimony is a local operator focused on safe, clean, and punctual
+          travel throughout Croydon. We design routes around where people live,
+          work, study, and shop—making daily transport easy and stress-free.
+        </p>
+      </section>
+
+      <section id="fleet" class="section">
+        <h2>Our fleet</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>CityConnect Single Deck</h3>
+            <p>
+              Efficient low-floor buses ideal for high-frequency urban routes.
+            </p>
+            <ul>
+              <li>Up to 45 seats</li>
+              <li>Wheelchair access</li>
+              <li>USB charging ports</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>MetroDouble Double Deck</h3>
+            <p>High-capacity services for busy town centre corridors.</p>
+            <ul>
+              <li>Up to 78 seats</li>
+              <li>Live next-stop displays</li>
+              <li>Extra luggage room</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>EcoShuttle Electric</h3>
+            <p>Quiet, zero-emission shuttles for local neighbourhood links.</p>
+            <ul>
+              <li>Up to 32 seats</li>
+              <li>Low-noise ride</li>
+              <li>Climate-controlled cabin</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="routes" class="section routes">
+        <div class="routes__header">
+          <h2>Route list</h2>
+          <p>
+            Our popular services in and around Croydon. Use “Open in Google
+            Maps” to view each route directly.
+          </p>
+        </div>
+
+        <div class="routes__layout">
+          <div>
+            <ul id="route-list" class="route-list" aria-live="polite"></ul>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              title="Croydon area map"
+              src="https://www.google.com/maps?q=Croydon%20UK&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> antimony. Moving Croydon forward.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
