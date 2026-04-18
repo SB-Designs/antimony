@@ -34,7 +34,7 @@ body {
       rgba(36, 39, 44, 0.6),
       rgba(36, 39, 44, 0.82)
     ),
-    url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1800&q=80');
+    url('hero-bg.svg');
   background-size: cover;
   background-position: center;
   filter: blur(2.5px);
